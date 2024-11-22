@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <form method="POST" action="">   <!--making act blank means the data will be sent to the same url it came from-->
+        {% csrf_token %}
+        {{form.as_p}}          <!--To wrap paragraph tag around each i/p content-->
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+{% endblock content %}

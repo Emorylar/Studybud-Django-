@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+<!--{% include 'navbar.html' %}  .....to include navbar in pages seperately-->
+
+{% block content %}             <!--9.part-->
+
+<style>
+    .home-container{
+        display:grid;
+        grid-template-columns:1fr 3fr 1fr;
+    }
+</style>
+
+<div class="home-container">                         <!--11.-->
+
+    <div>
+        {% include 'base/topics_component.html' %}
+    </div>
+
+    <div>
+        <h5>{{room_count}} rooms available</h5>
+        <a href="{% url 'create-room'  %}">Create Room</a>
+
+    <div>
+        {% include 'base/feed_component.html' %}
+    </div>
+    </div>
+
+    <div>
+        {% include 'base/activity_component.html' %}
+    </div>
+
+</div>
+
+{% endblock content %}
